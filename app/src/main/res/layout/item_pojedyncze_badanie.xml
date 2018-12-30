@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="15dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginTop="10dp">
+
+    <TextView
+        android:id="@+id/text_view_id_badania"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_centerVertical="true"
+        android:text="1"
+        android:textColor="@android:color/white"/>
+
+    <ImageView
+        android:id="@+id/vector_wozek"
+        android:layout_width="45dp"
+        android:layout_height="55dp"
+        android:layout_toEndOf="@id/text_view_id_badania"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_my_child" />
+
+
+
+    <Button
+        android:id="@+id/button_wybierz"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@id/vector_wozek"
+        android:background="@color/colorButton"
+        android:text="data"
+        android:textColor="@android:color/black"
+        android:textSize="15dp" />
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="grupy_krwi">
+        <item>brak informacji</item>
+        <item>0 Rh plus</item>
+        <item>0 Rh minus</item>
+        <item>A Rh plus</item>
+        <item>A Rh minus</item>
+        <item>B Rh plus</item>
+        <item>B Rh minus</item>
+        <item>AB Rh plus</item>
+        <item>AB Rh minus</item>
+    </string-array>
+</resources>

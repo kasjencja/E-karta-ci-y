@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">E-karta ciąży</string>
+    <string name="title_home">Start</string>
+    <string name="title_dashboard">Wizyty lekarskie</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_wybor_badan">WyborBadan</string>
+</resources>

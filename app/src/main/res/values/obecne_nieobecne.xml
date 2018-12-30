@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="nieobecne_obecne">
+        <item>Nieobecne</item>
+        <item>Obecne</item>
+    </string-array>
+</resources>
