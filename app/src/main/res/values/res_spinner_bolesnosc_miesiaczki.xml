@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="bolesnosc_miesiaczki">
+        <item>Brak informacji</item>
         <item>Bolesne</item>
         <item>Niebolesne</item>
     </string-array>

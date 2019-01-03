@@ -61,7 +61,7 @@ public class BadaniaDbHandler  extends SQLiteOpenHelper {
     }
 
     public void addBadanieHandler(ModelBadania badanie) {
-        SQLiteDatabase db = this.getWritableDatabase(); //tu sypie
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_DATA_BADANIA, badanie.getDataBadania());
         values.put(COLUMN_TERMIN_NW, badanie.getTerminNW());

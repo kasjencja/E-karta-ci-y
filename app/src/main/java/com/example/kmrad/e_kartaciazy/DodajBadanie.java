@@ -211,6 +211,13 @@ public class DodajBadanie extends AppCompatActivity {
         BadaniaDbHandler dbHandler = new BadaniaDbHandler(this, null,null,1);
         dbHandler.addBadanieHandler(badanie);
 
+        if(!terminNastepnejWizyty.getText().toString().isEmpty()){
+            ModelNastepnaWizyta modelNastepnaWizyta = new ModelNastepnaWizyta(terminNastepnejWizyty.getText().toString());
+            NastepnaWizytaDbHandler dbNastepnaWizytaHandler = new NastepnaWizytaDbHandler(this, null, null, 1);
+            dbNastepnaWizytaHandler.addNastepnaWizytaHandler(modelNastepnaWizyta);
+        }
+
+
         Intent intent = new Intent(DodajBadanie.this, PrzegladBadan.class);
         startActivity(intent);
     }

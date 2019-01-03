@@ -34,7 +34,7 @@
                 android:textStyle="bold" />
 
             <RelativeLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp">
 
@@ -56,17 +56,17 @@
                     android:layout_toEndOf="@+id/tv_dataOM"
                     android:src="@drawable/ic_event_black_24dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/text_data_OM"
                     android:layout_width="wrap_content"
+                    android:minWidth="50dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_toEndOf="@id/button_data_OM"
-                    android:layout_toRightOf="@id/button_data_OM"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:editable="false"/>
             </RelativeLayout>
 
             <EditText
@@ -96,7 +96,9 @@
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/co_ile_dni"
                     android:minWidth="50dp"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -115,25 +117,36 @@
                 android:editable="false"
                 android:inputType="none" />
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/tv_termin_porodu"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:text="Termin porodu"
+                android:text="Termin porodu:"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/tv_TP"
-                android:layout_width="match_parent"
+                android:layout_toEndOf="@id/tv_termin_porodu"
+                android:layout_alignBaseline="@id/tv_termin_porodu"
+                android:layout_width="wrap_content"
+                android:minWidth="50dp"
+                android:layout_marginStart="10dp"
+                android:editable="false"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textAlignment="center"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
+            </RelativeLayout>
 
             <EditText
                 android:layout_width="match_parent"
@@ -171,7 +184,8 @@
                     android:layout_toEndOf="@id/pierwsza_miesiaczka"
                     android:hint="wiek"
                     android:minWidth="50dp"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:inputType="number"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -212,7 +226,8 @@
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/ile_trwaja_dni"
                     android:minWidth="50dp"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:inputType="number"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -294,15 +309,6 @@
                     android:text="Tak"
                     android:textSize="20sp" />
 
-                <RadioButton
-                    android:id="@+id/ginekologiczny_zaburzenia_tak"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/czy_sa_zaburzenia"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_toEndOf="@id/zaburzenia_tak" />
-
                 <TextView
                     android:id="@+id/zaburzenia_nie"
                     android:layout_width="wrap_content"
@@ -313,15 +319,31 @@
                     android:text="Nie"
                     android:textSize="20sp" />
 
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/zaburzenia_tak"
+                    android:layout_below="@id/czy_sa_zaburzenia">
+
+
+                    <RadioButton
+                    android:id="@+id/ginekologiczny_zaburzenia_tak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"/>
+
+
+
                 <RadioButton
                     android:id="@+id/ginekologiczny_zaburzenia_nie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@id/zaburzenia_nie"
-                    android:layout_alignStart="@id/ginekologiczny_zaburzenia_tak"
-                    android:layout_below="@id/ginekologiczny_zaburzenia_tak"
-                    android:layout_marginTop="15dp"
-                    android:layout_toEndOf="@id/zaburzenia_nie" />
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"/>
+
+                </RadioGroup>
+
             </RelativeLayout>
 
             <EditText
@@ -354,26 +376,8 @@
                     android:layout_toEndOf="@id/poronienia"
                     android:hint="Liczba"
                     android:minWidth="100dp"
-                    android:textAlignment="center" />
-                <!--
-                            <Button
-                                android:id="@+id/ginekologiczny_button_poronienie"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignBaseline="@id/poronienia"
-                                android:layout_marginStart="20dp"
-                                android:layout_toEndOf="@id/poronienia"
-                                android:text="dodaj"
-                                android:textAlignment="center"
-                                android:textSize="20sp" />
-
-
-                        <android.support.v7.widget.RecyclerView
-                            android:id="@+id/recycler_poronienie"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                        </android.support.v7.widget.RecyclerView>
-                        -->
+                    android:textAlignment="center"
+                    android:inputType="number"/>
 
             </RelativeLayout>
 
@@ -407,29 +411,8 @@
                     android:layout_toEndOf="@id/porody"
                     android:hint="Liczba"
                     android:minWidth="100dp"
-                    android:textAlignment="center" />
-
-                <!--
-
-                <Button
-                    android:id="@+id/ginekologiczny_button_porody"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@id/porody"
-                    android:layout_marginStart="20dp"
-                    android:layout_toEndOf="@id/porody"
-                    android:text="dodaj"
                     android:textAlignment="center"
-                    android:textSize="20sp" />
-
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_porod"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </android.support.v7.widget.RecyclerView>
-
-                    -->
+                    android:inputType="number"/>
 
             </RelativeLayout>
 
@@ -462,7 +445,9 @@
                     android:layout_toEndOf="@id/pozamaciczne"
                     android:hint="Liczba"
                     android:minWidth="100dp"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:inputType="number"/>
+
             </RelativeLayout>
 
             <EditText
@@ -480,6 +465,7 @@
                 android:layout_marginEnd="30dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="20dp"
+                android:background="@color/colorButton"
                 android:text="Zapisz" />
 
         </LinearLayout>
