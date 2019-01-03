@@ -20,12 +20,17 @@
         </activity>
         <activity
             android:name=".WyborBadan"
-            android:label="@string/title_activity_wybor_badan" />
-        <activity android:name=".DodajBadanie" />
-        <activity android:name=".WywiadGinekologiczny" />
-        <activity android:name=".WywiadRodzinny" />
-        <activity android:name=".PrzegladBadan" />
-        <activity android:name=".WidokBadaniaWykonanego"></activity>
+            android:label="Wybierz rodzaj badania" />
+        <activity android:name=".DodajBadanie"
+            android:label="Dodaj nowe badanie"/>
+        <activity android:name=".WywiadGinekologiczny"
+            android:label="Wywiad położniczo-ginekologiczny"/>
+        <activity android:name=".WywiadRodzinny"
+            android:label="Wywiad rodzinny"/>
+        <activity android:name=".PrzegladBadan"
+            android:label="Przegląd i dodawanie badań"/>
+        <activity android:name=".WidokBadaniaWykonanego"
+            android:label="Szczegóły badania"></activity>
     </application>
 
 </manifest>

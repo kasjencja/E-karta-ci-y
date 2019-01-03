@@ -367,6 +367,7 @@
                     android:textSize="15sp" />
 
                 <RadioButton
+                    android:id="@+id/nieplodnosc_kobieta_check"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@id/kobieta"
@@ -375,14 +376,14 @@
                     android:background="@drawable/ic_check_box_outline" />
 
                 <RadioButton
+                    android:id="@+id/nieplodnosc_mezczyzna_check"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@id/mezczyzna"
                     android:layout_below="@id/kobieta"
                     android:layout_marginStart="20dp"
                     android:layout_toEndOf="@id/mezczyzna"
-                    android:background="@drawable/ic_check_box_outline"
-                    android:foreground="@drawable/ic_check" />
+                    android:background="@drawable/ic_check_box_outline" />
 
             </RelativeLayout>
 
@@ -437,34 +438,34 @@
                     android:textSize="15sp" />
 
                 <RadioButton
+                    android:id="@+id/regulacja_mechaniczna"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@id/mechaniczne"
                     android:layout_marginStart="20dp"
                     android:layout_toEndOf="@id/mechaniczne"
-                    android:background="@drawable/ic_check_box_outline"
-                    android:foreground="@drawable/ic_check" />
+                    android:background="@drawable/ic_check_box_outline"/>
 
                 <RadioButton
+                    android:id="@+id/regulacja_chormonalna"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@id/hormonalne"
                     android:layout_below="@id/mechaniczne"
                     android:layout_marginStart="20dp"
                     android:layout_toEndOf="@id/hormonalne"
-                    android:background="@drawable/ic_check_box_outline"
-                    android:foreground="@drawable/ic_check" />
+                    android:background="@drawable/ic_check_box_outline" />
 
 
                 <RadioButton
+                    android:id="@+id/regulacja_inna"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@id/inne"
                     android:layout_below="@id/hormonalne"
                     android:layout_marginStart="20dp"
                     android:layout_toEndOf="@id/inne"
-                    android:background="@drawable/ic_check_box_outline"
-                    android:foreground="@drawable/ic_check" />
+                    android:background="@drawable/ic_check_box_outline" />
 
             </RelativeLayout>
 
@@ -508,11 +509,13 @@
                     android:layout_toRightOf="@id/tak">
 
                     <RadioButton
+                        android:id="@+id/stosowane_w_ciazy_tak"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp" />
 
                     <RadioButton
+                        android:id="@+id/stosowane_w_ciazy_nie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
@@ -529,6 +532,7 @@
                 android:inputType="none" />
 
             <Button
+                android:id="@+id/zapisz_wywiad_rodzinny"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -537,7 +541,8 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="20dp"
                 android:text="Zapisz"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="@color/colorButton"/>
 
         </LinearLayout>
 

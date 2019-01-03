@@ -1,7 +1,11 @@
 package com.example.kmrad.e_kartaciazy;
 
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -11,6 +15,27 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class WidokBadaniaWykonanego extends AppCompatActivity {
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    Intent intent = new Intent(WidokBadaniaWykonanego.this, MainActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.navigation_dashboard:
+                    Intent intentWybor = new Intent(WidokBadaniaWykonanego.this, WyborBadan.class);
+                    startActivity(intentWybor);
+                    break;
+                case R.id.navigation_notifications:
+                    return true;
+            }
+            return false;
+        }
+    };
 
     @BindView(R.id.przeglad_text_data_NW)
     TextView terminNW;
@@ -64,6 +89,11 @@ public class WidokBadaniaWykonanego extends AppCompatActivity {
         int IDBadania = Integer.parseInt(idBadania);
         setContentView(R.layout.activity_widok_badania_wykonanego);
         ButterKnife.bind(this);
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setSelectedItemId(R.id.navigation_dashboard);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
         BadaniaDbHandler dbHandler = new BadaniaDbHandler(this, null,null,1);
         ModelBadania badanie = dbHandler.findBadanieHandler(IDBadania);
 

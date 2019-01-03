@@ -3,8 +3,11 @@ package com.example.kmrad.e_kartaciazy;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.icu.util.Calendar;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
@@ -27,6 +30,27 @@ import butterknife.OnClick;
 import butterknife.OnTextChanged;
 
 public class WywiadGinekologiczny extends AppCompatActivity {
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    Intent intent = new Intent(WywiadGinekologiczny.this, MainActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.navigation_dashboard:
+                    Intent intentWybor = new Intent(WywiadGinekologiczny.this, WyborBadan.class);
+                    startActivity(intentWybor);
+                    break;
+                case R.id.navigation_notifications:
+                    return true;
+            }
+            return false;
+        }
+    };
 
     public static String data, dataPorodu;
     public static Boolean czyJestWczesniejszyZapis;
@@ -94,6 +118,10 @@ public class WywiadGinekologiczny extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wywiad_ginekologiczny);
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setSelectedItemId(R.id.navigation_dashboard);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         //spinner obfitosc miesiaczki
         Spinner spinnerObfitosc = (Spinner) findViewById(R.id.spinner_obfitosc);

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cukrzyca">
+        <item>Brak</item>
+        <item>Typu 1 - insulinozależna</item>
+        <item>Typu 2 - insulinoniezależna</item>
+        <item>Typu 3 - wtórna</item>
+        <item>Cukrzyca ciążowa</item>
+    </string-array>
+</resources>
