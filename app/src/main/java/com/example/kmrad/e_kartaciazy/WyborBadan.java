@@ -35,7 +35,7 @@ public class WyborBadan extends AppCompatActivity {
 
     @OnClick(R.id.wybor_badan_dodatkowe)
     void OnClickDodatkowe(){
-        Intent intent = new Intent(WyborBadan.this, DodajBadanie.class);
+        Intent intent = new Intent(WyborBadan.this, BadaniaDodatkowe.class);
         startActivity(intent);
     }
 

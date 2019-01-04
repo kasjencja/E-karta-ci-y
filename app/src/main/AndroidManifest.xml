@@ -21,16 +21,23 @@
         <activity
             android:name=".WyborBadan"
             android:label="Wybierz rodzaj badania" />
-        <activity android:name=".DodajBadanie"
-            android:label="Dodaj nowe badanie"/>
-        <activity android:name=".WywiadGinekologiczny"
-            android:label="Wywiad położniczo-ginekologiczny"/>
-        <activity android:name=".WywiadRodzinny"
-            android:label="Wywiad rodzinny"/>
-        <activity android:name=".PrzegladBadan"
-            android:label="Przegląd i dodawanie badań"/>
-        <activity android:name=".WidokBadaniaWykonanego"
-            android:label="Szczegóły badania"></activity>
+        <activity
+            android:name=".DodajBadanie"
+            android:label="Dodaj nowe badanie" />
+        <activity
+            android:name=".WywiadGinekologiczny"
+            android:label="Wywiad położniczo-ginekologiczny" />
+        <activity
+            android:name=".WywiadRodzinny"
+            android:label="Wywiad rodzinny" />
+        <activity
+            android:name=".PrzegladBadan"
+            android:label="Przegląd i dodawanie badań" />
+        <activity
+            android:name=".WidokBadaniaWykonanego"
+            android:label="Szczegóły badania" />
+        <activity android:name=".BadaniaDodatkowe"
+            android:label="Badania dodatkowe"></activity>
     </application>
 
 </manifest>
