@@ -45,8 +45,6 @@ public class WywiadGinekologiczny extends AppCompatActivity {
                     Intent intentWybor = new Intent(WywiadGinekologiczny.this, WyborBadan.class);
                     startActivity(intentWybor);
                     break;
-                case R.id.navigation_notifications:
-                    return true;
             }
             return false;
         }
@@ -230,13 +228,10 @@ public class WywiadGinekologiczny extends AppCompatActivity {
             c.add(Calendar.DATE, 7);
             c.add(Calendar.MONTH, -3);
             c.add(Calendar.DATE, (dniCyklu-28));
+            c.add(Calendar.YEAR, 1);
             terminPoroduWyliczony = c.getTime();
             dataPorodu = formatDaty.format(terminPoroduWyliczony);
             terminPorodu.setText(dataPorodu);
-            if (terminPoroduWyliczony.toString() == "01/01/2018") {
-                String halo;
-            }
-
         }
     }
 

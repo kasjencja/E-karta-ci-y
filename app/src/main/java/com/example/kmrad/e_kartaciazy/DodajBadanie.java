@@ -38,8 +38,6 @@ public class DodajBadanie extends AppCompatActivity {
                     Intent intentWybor = new Intent(DodajBadanie.this, WyborBadan.class);
                     startActivity(intentWybor);
                     break;
-                case R.id.navigation_notifications:
-                    return true;
             }
             return false;
         }

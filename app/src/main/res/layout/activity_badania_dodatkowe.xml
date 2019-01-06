@@ -57,7 +57,7 @@
                     android:layout_toEndOf="@id/et_glukoza_na_czczo"
                     android:layout_marginLeft="20dp"
                     android:layout_marginStart="20dp"
-                    android:text="Data:"
+                    android:text=""
                     android:textSize="15sp" />
 
             </RelativeLayout>
@@ -101,7 +101,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_toEndOf="@id/tsh"
-                    android:text="Data: "
+                    android:text=""
                     android:textSize="15sp" />
             </RelativeLayout>
 
@@ -143,7 +143,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_toEndOf="@id/anty_tpo"
-                    android:text="Data: "
+                    android:text=""
                     android:textSize="15sp" />
             </RelativeLayout>
 
@@ -185,7 +185,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_toEndOf="@id/wr"
-                    android:text="Data: "
+                    android:text=""
                     android:textSize="15sp" />
             </RelativeLayout>
 
@@ -227,7 +227,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_toEndOf="@id/hbs"
-                    android:text="Data: "
+                    android:text=""
                     android:textSize="15sp" />
             </RelativeLayout>
 
@@ -269,7 +269,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_toEndOf="@id/hcv"
-                    android:text="Data: "
+                    android:text=""
                     android:textSize="15sp" />
             </RelativeLayout>
 
@@ -312,7 +312,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_toEndOf="@id/dod_hiv"
-                    android:text="Data: "
+                    android:text=""
                     android:textSize="15sp" />
             </RelativeLayout>
 
@@ -344,7 +344,8 @@
                     android:layout_height="wrap_content"
                     android:minWidth="100dp"
                     android:layout_marginStart="25dp"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:hint="IGG"/>
 
                 <TextView
                     android:id="@+id/toksoplazmoza_data_igg"
@@ -354,7 +355,29 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_toEndOf="@id/toksoplazmoza_igg"
-                    android:text="Data: "
+                    android:text=""
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/toksoplazmoza_igm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="100dp"
+                    android:layout_below="@id/toksoplazmoza_igg"
+                    android:layout_marginStart="25dp"
+                    android:textAlignment="center"
+                    android:hint="IGM"/>
+
+                <TextView
+                    android:id="@+id/toksoplazmoza_data_igm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/toksoplazmoza_igm"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toEndOf="@id/toksoplazmoza_igm"
+                    android:layout_below="@id/toksoplazmoza_igg"
+                    android:text=""
                     android:textSize="15sp" />
 
             </RelativeLayout>
@@ -397,7 +420,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_toEndOf="@id/cytomegalia_igg"
-                    android:text="Data: "
+                    android:text=""
                     android:textSize="15sp" />
 
 
@@ -441,7 +464,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_toEndOf="@id/rozyczka"
-                    android:text="Data: "
+                    android:text=""
                     android:textSize="15sp" />
             </RelativeLayout>
 

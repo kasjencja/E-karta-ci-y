@@ -31,8 +31,6 @@ public class PrzegladBadan extends AppCompatActivity {
                     Intent intentWybor = new Intent(PrzegladBadan.this, WyborBadan.class);
                     startActivity(intentWybor);
                     break;
-                case R.id.navigation_notifications:
-                    return true;
             }
             return false;
         }

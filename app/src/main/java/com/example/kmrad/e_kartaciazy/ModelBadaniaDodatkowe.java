@@ -26,6 +26,8 @@ public class ModelBadaniaDodatkowe {
     private String CytomegaliaData;
     private String Rozyczka;
     private String RozyczkaData;
+    private String ToksoplazmozaIGM;
+    private String ToksoplazmozaIGMData;
 
 
     public ModelBadaniaDodatkowe() {
@@ -189,5 +191,21 @@ public class ModelBadaniaDodatkowe {
 
     public void setRozyczkaData(String rozyczkaData) {
         RozyczkaData = rozyczkaData;
+    }
+
+    public String getToksoplazmozaIGM() {
+        return ToksoplazmozaIGM;
+    }
+
+    public void setToksoplazmozaIGM(String toksoplazmozaIGM) {
+        ToksoplazmozaIGM = toksoplazmozaIGM;
+    }
+
+    public String getToksoplazmozaIGMData() {
+        return ToksoplazmozaIGMData;
+    }
+
+    public void setToksoplazmozaIGMData(String toksoplazmozaIGMData) {
+        ToksoplazmozaIGMData = toksoplazmozaIGMData;
     }
 }

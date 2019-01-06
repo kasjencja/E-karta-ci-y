@@ -94,8 +94,6 @@ public class WywiadRodzinny extends AppCompatActivity {
                     Intent intentWybor = new Intent(WywiadRodzinny.this, WyborBadan.class);
                     startActivity(intentWybor);
                     break;
-                case R.id.navigation_notifications:
-                    return true;
             }
             return false;
         }

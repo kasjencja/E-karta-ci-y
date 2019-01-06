@@ -35,6 +35,9 @@ public class BadaniaDodatkoweDBHandler extends SQLiteOpenHelper {
     public static final String COLUMN_CYTO_DATA = "cytomegalia_data";
     public static final String COLUMN_ROZYCZKA = "rozyczka";
     public static final String COLUMN_ROZYCZKA_DATA = "rozyczka_data";
+    public static final String COLUMN_TOKSO_IGM = "toksoplazmoza_igm";
+    public static final String COLUMN_TOKSO_DATA_IGM = "toksoplazmoza_data_igm";
+
 
 
     public BadaniaDodatkoweDBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -49,7 +52,8 @@ public class BadaniaDodatkoweDBHandler extends SQLiteOpenHelper {
                 COLUMN_HBS + " TEXT, " + COLUMN_HBS_DATA + " TEXT, " + COLUMN_HCV + " TEXT, " +
                 COLUMN_HCV_DATA + " TEXT, " + COLUMN_HIV + " TEXT, " + COLUMN_HIV_DATA + " TEXT, " +
                 COLUMN_TOKSO + " TEXT, " + COLUMN_TOKSO_DATA + " TEXT, " + COLUMN_CYTO + " TEXT, " +
-                COLUMN_CYTO_DATA + " TEXT, " + COLUMN_ROZYCZKA + " TEXT, " + COLUMN_ROZYCZKA_DATA + " TEXT)";
+                COLUMN_CYTO_DATA + " TEXT, " + COLUMN_ROZYCZKA + " TEXT, " + COLUMN_ROZYCZKA_DATA + " TEXT, " +
+                COLUMN_TOKSO_IGM + " TEXT, " + COLUMN_TOKSO_DATA_IGM + " TEXT)";
         db.execSQL(CREATE_TABLE);
     }
 
@@ -81,6 +85,8 @@ public class BadaniaDodatkoweDBHandler extends SQLiteOpenHelper {
         values.put(COLUMN_CYTO_DATA, badaniaDodatkowe.getCytomegaliaData());
         values.put(COLUMN_ROZYCZKA, badaniaDodatkowe.getRozyczka());
         values.put(COLUMN_ROZYCZKA_DATA, badaniaDodatkowe.getRozyczkaData());
+        values.put(COLUMN_TOKSO_IGM, badaniaDodatkowe.getToksoplazmozaIGM());
+        values.put(COLUMN_TOKSO_DATA_IGM, badaniaDodatkowe.getToksoplazmozaIGMData());
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
@@ -110,6 +116,8 @@ public class BadaniaDodatkoweDBHandler extends SQLiteOpenHelper {
         values.put(COLUMN_CYTO_DATA, badaniaDodatkowe.getCytomegaliaData());
         values.put(COLUMN_ROZYCZKA, badaniaDodatkowe.getRozyczka());
         values.put(COLUMN_ROZYCZKA_DATA, badaniaDodatkowe.getRozyczkaData());
+        values.put(COLUMN_TOKSO_IGM, badaniaDodatkowe.getToksoplazmozaIGM());
+        values.put(COLUMN_TOKSO_DATA_IGM, badaniaDodatkowe.getToksoplazmozaIGMData());
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
@@ -141,6 +149,8 @@ public class BadaniaDodatkoweDBHandler extends SQLiteOpenHelper {
             badaniaDodatkowe.setCytomegaliaData(cursor.getString(17));
             badaniaDodatkowe.setRozyczka(cursor.getString(18));
             badaniaDodatkowe.setRozyczkaData(cursor.getString(19));
+            badaniaDodatkowe.setToksoplazmozaIGM(cursor.getString(20));
+            badaniaDodatkowe.setToksoplazmozaIGMData(cursor.getString(21));
             cursor.close();
         } else {
             badaniaDodatkowe = null;

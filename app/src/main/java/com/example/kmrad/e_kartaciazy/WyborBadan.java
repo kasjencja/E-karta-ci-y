@@ -51,9 +51,6 @@ public class WyborBadan extends AppCompatActivity {
                     return true;
                 case R.id.navigation_dashboard:
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
             }
             return false;
         }

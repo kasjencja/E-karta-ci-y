@@ -20,10 +20,7 @@ import butterknife.OnClick;
 public class BadaniaDodatkowe extends AppCompatActivity {
 
     static boolean czyBylWczesniejZapisDod;
-    Calendar c = Calendar.getInstance();
-    int curRok = c.get(Calendar.YEAR);
-    int curMiesiac = c.get(Calendar.MONTH);
-    int curDzien = c.get(Calendar.DAY_OF_MONTH);
+    static String TMPtoksoplazmozaIGG, TMPtoksoplazmozaIGM;
 
     @BindView(R.id.et_glukoza_na_czczo)
     EditText glukozaNaCzczo;
@@ -85,6 +82,13 @@ public class BadaniaDodatkowe extends AppCompatActivity {
     @BindView(R.id.rozyczka_data)
     TextView rozyczkaData;
 
+    @BindView(R.id.toksoplazmoza_igm)
+    EditText toksoplazmozaIGM;
+
+    @BindView(R.id.toksoplazmoza_data_igm)
+    TextView toksoplazmozaDataIGM;
+
+
     @OnClick(R.id.dodatkowe_button_zapisz)
     void onClickDodatkoweZapisz(){
         zapiszBadanieDodatkowe();
@@ -106,8 +110,6 @@ public class BadaniaDodatkowe extends AppCompatActivity {
                     Intent intentWybor = new Intent(BadaniaDodatkowe.this, WyborBadan.class);
                     startActivity(intentWybor);
                     break;
-                case R.id.navigation_notifications:
-                    return true;
             }
             return false;
         }
@@ -170,33 +172,46 @@ public class BadaniaDodatkowe extends AppCompatActivity {
             }
             if (!badaniaDodatkowe.getHCV().equals("brak")){
                 hcv.setText(badaniaDodatkowe.getHCV());
+                hcv.setEnabled(false);
             }
             if (!badaniaDodatkowe.getHCVData().equals("brak")){
                 hcvData.setText(badaniaDodatkowe.getHCVData());
             }
             if (!badaniaDodatkowe.getHIV().equals("brak")){
                 hiv.setText(badaniaDodatkowe.getHIV());
+                hiv.setEnabled(false);
             }
             if (!badaniaDodatkowe.getHIVData().equals("brak")){
                 hivData.setText(badaniaDodatkowe.getHIVData());
             }
             if (!badaniaDodatkowe.getToksoplazmoza().equals("brak")){
                 toksoplazmoza.setText(badaniaDodatkowe.getToksoplazmoza());
+                TMPtoksoplazmozaIGG = badaniaDodatkowe.getToksoplazmoza();
             }
             if (!badaniaDodatkowe.getToksoplazmozaData().equals("brak")){
                 toksoplazmozaData.setText(badaniaDodatkowe.getToksoplazmozaData());
             }
             if (!badaniaDodatkowe.getCytomegalia().equals("brak")){
                 cytomegalia.setText(badaniaDodatkowe.getCytomegalia());
+                cytomegalia.setEnabled(false);
             }
             if (!badaniaDodatkowe.getCytomegaliaData().equals("brak")){
                 cytomegaliaData.setText(badaniaDodatkowe.getCytomegaliaData());
             }
             if (!badaniaDodatkowe.getRozyczka().equals("brak")){
                 rozyczka.setText(badaniaDodatkowe.getRozyczka());
+                rozyczka.setEnabled(false);
             }
             if (!badaniaDodatkowe.getRozyczkaData().equals("brak")){
                 rozyczkaData.setText(badaniaDodatkowe.getRozyczkaData());
+            }
+
+            if (!badaniaDodatkowe.getToksoplazmozaIGM().equals("brak")){
+                toksoplazmoza.setText(badaniaDodatkowe.getToksoplazmozaIGM());
+                TMPtoksoplazmozaIGM = badaniaDodatkowe.getToksoplazmozaIGM();
+            }
+            if (!badaniaDodatkowe.getToksoplazmozaIGMData().equals("brak")){
+                toksoplazmozaData.setText(badaniaDodatkowe.getToksoplazmozaIGMData());
             }
         } else {czyBylWczesniejZapisDod=false;}
 
@@ -211,63 +226,100 @@ public class BadaniaDodatkowe extends AppCompatActivity {
 
         if (!glukozaNaCzczo.getText().toString().isEmpty()){
             badaniaDodatkowe.setGlukozaNaCzczo(glukozaNaCzczo.getText().toString());
+            if (!glukozaNaCzczoData.getText().toString().isEmpty()){
+                badaniaDodatkowe.setGlukozaNaCzczoData(glukozaNaCzczoData.getText().toString());
+            } else {badaniaDodatkowe.setGlukozaNaCzczoData(currentDateandTime);}
             badaniaDodatkowe.setGlukozaNaCzczoData(currentDateandTime);
         } else {badaniaDodatkowe.setGlukozaNaCzczo("brak");
             badaniaDodatkowe.setGlukozaNaCzczoData("brak");}
 
         if (!tsh.getText().toString().isEmpty()){
             badaniaDodatkowe.setTSH(tsh.getText().toString());
-            badaniaDodatkowe.setTSHData(currentDateandTime);
+            if (!tshData.getText().toString().isEmpty()){
+                badaniaDodatkowe.setTSHData(tshData.getText().toString());
+            } else {badaniaDodatkowe.setTSHData(currentDateandTime);}
         } else {badaniaDodatkowe.setTSH("brak");
             badaniaDodatkowe.setTSHData("brak");}
 
         if (!tpo.getText().toString().isEmpty()){
             badaniaDodatkowe.setAntyTPO(tpo.getText().toString());
-            badaniaDodatkowe.setAntyTpoData(currentDateandTime);
+            if (!tpoData.getText().toString().isEmpty()){
+                badaniaDodatkowe.setAntyTpoData(tpoData.getText().toString());
+            } else {badaniaDodatkowe.setAntyTpoData(currentDateandTime);}
         } else {badaniaDodatkowe.setAntyTPO("brak");
             badaniaDodatkowe.setAntyTpoData("brak");}
 
         if (!wr.getText().toString().isEmpty()){
             badaniaDodatkowe.setWR(wr.getText().toString());
-            badaniaDodatkowe.setWRData(currentDateandTime);
+            if (!wrData.getText().toString().isEmpty()){
+                badaniaDodatkowe.setWRData(wrData.getText().toString());
+            } else {badaniaDodatkowe.setWRData(currentDateandTime);}
         } else {badaniaDodatkowe.setWR("brak");
             badaniaDodatkowe.setWRData("brak");}
 
         if (!hbs.getText().toString().isEmpty()){
             badaniaDodatkowe.setHBs(hbs.getText().toString());
-            badaniaDodatkowe.setHBSData(currentDateandTime);
+            if (!hbsData.getText().toString().isEmpty()){
+                badaniaDodatkowe.setHBSData(hbsData.getText().toString());
+            } else {badaniaDodatkowe.setHBSData(currentDateandTime);}
         } else {badaniaDodatkowe.setHBs("brak");
             badaniaDodatkowe.setHBSData("brak");}
 
         if (!hcv.getText().toString().isEmpty()){
             badaniaDodatkowe.setHCV(hcv.getText().toString());
-            badaniaDodatkowe.setHCVData(currentDateandTime);
+            if (!hcvData.getText().toString().isEmpty()){
+                badaniaDodatkowe.setHCVData(hcvData.getText().toString());
+            } else {badaniaDodatkowe.setHCVData(currentDateandTime);}
         } else {badaniaDodatkowe.setHCV("brak");
             badaniaDodatkowe.setHCVData("brak");}
 
         if (!hiv.getText().toString().isEmpty()){
             badaniaDodatkowe.setHIV(hiv.getText().toString());
-            badaniaDodatkowe.setHIVData(currentDateandTime);
+            if (!hivData.getText().toString().isEmpty()){
+                badaniaDodatkowe.setHIVData(hivData.getText().toString());
+            } else {badaniaDodatkowe.setHIVData(currentDateandTime);}
         } else {badaniaDodatkowe.setHIV("brak");
             badaniaDodatkowe.setHIVData("brak");}
 
         if (!toksoplazmoza.getText().toString().isEmpty()){
-            badaniaDodatkowe.setToksoplazmoza(toksoplazmoza.getText().toString());
-            badaniaDodatkowe.setToksoplazmozaData(currentDateandTime);
+            if (toksoplazmoza.getText().toString()==TMPtoksoplazmozaIGG){
+                badaniaDodatkowe.setToksoplazmoza(toksoplazmoza.getText().toString());
+                badaniaDodatkowe.setToksoplazmozaData(toksoplazmozaData.getText().toString());
+            }
+            else {
+                badaniaDodatkowe.setToksoplazmoza(toksoplazmoza.getText().toString());
+                badaniaDodatkowe.setToksoplazmozaData(currentDateandTime);
+            }
         } else {badaniaDodatkowe.setToksoplazmoza("brak");
             badaniaDodatkowe.setToksoplazmozaData("brak");}
 
         if (!cytomegalia.getText().toString().isEmpty()){
             badaniaDodatkowe.setCytomegalia(cytomegalia.getText().toString());
-            badaniaDodatkowe.setCytomegaliaData(currentDateandTime);
+            if (!cytomegaliaData.getText().toString().isEmpty()){
+                badaniaDodatkowe.setCytomegaliaData(cytomegaliaData.getText().toString());
+            } else {badaniaDodatkowe.setCytomegaliaData(currentDateandTime);}
         } else {badaniaDodatkowe.setCytomegalia("brak");
             badaniaDodatkowe.setCytomegaliaData("brak");}
 
         if (!rozyczka.getText().toString().isEmpty()){
             badaniaDodatkowe.setRozyczka(rozyczka.getText().toString());
-            badaniaDodatkowe.setRozyczkaData(currentDateandTime);
+            if (!rozyczkaData.getText().toString().isEmpty()){
+                badaniaDodatkowe.setRozyczkaData(rozyczkaData.getText().toString());
+            } else {badaniaDodatkowe.setRozyczkaData(currentDateandTime);}
         } else {badaniaDodatkowe.setRozyczka("brak");
             badaniaDodatkowe.setRozyczkaData("brak");}
+
+        if (!toksoplazmozaIGM.getText().toString().isEmpty()){
+            if (toksoplazmoza.getText().toString()==TMPtoksoplazmozaIGM){
+                badaniaDodatkowe.setToksoplazmozaIGM(toksoplazmozaIGM.getText().toString());
+                badaniaDodatkowe.setToksoplazmozaIGMData(toksoplazmozaDataIGM.getText().toString());
+            }
+            else {
+                badaniaDodatkowe.setToksoplazmozaIGM(toksoplazmozaIGM.getText().toString());
+                badaniaDodatkowe.setToksoplazmozaIGMData(currentDateandTime);
+            }
+        } else {badaniaDodatkowe.setToksoplazmozaIGM("brak");
+            badaniaDodatkowe.setToksoplazmozaIGMData("brak");}
 
 
         if (!czyBylWczesniejZapisDod){
