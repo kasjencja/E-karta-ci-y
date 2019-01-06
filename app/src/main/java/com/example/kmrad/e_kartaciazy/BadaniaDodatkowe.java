@@ -207,11 +207,11 @@ public class BadaniaDodatkowe extends AppCompatActivity {
             }
 
             if (!badaniaDodatkowe.getToksoplazmozaIGM().equals("brak")){
-                toksoplazmoza.setText(badaniaDodatkowe.getToksoplazmozaIGM());
+                toksoplazmozaIGM.setText(badaniaDodatkowe.getToksoplazmozaIGM());
                 TMPtoksoplazmozaIGM = badaniaDodatkowe.getToksoplazmozaIGM();
             }
             if (!badaniaDodatkowe.getToksoplazmozaIGMData().equals("brak")){
-                toksoplazmozaData.setText(badaniaDodatkowe.getToksoplazmozaIGMData());
+                toksoplazmozaDataIGM.setText(badaniaDodatkowe.getToksoplazmozaIGMData());
             }
         } else {czyBylWczesniejZapisDod=false;}
 
@@ -310,7 +310,7 @@ public class BadaniaDodatkowe extends AppCompatActivity {
             badaniaDodatkowe.setRozyczkaData("brak");}
 
         if (!toksoplazmozaIGM.getText().toString().isEmpty()){
-            if (toksoplazmoza.getText().toString()==TMPtoksoplazmozaIGM){
+            if (toksoplazmozaIGM.getText().toString()==TMPtoksoplazmozaIGM){
                 badaniaDodatkowe.setToksoplazmozaIGM(toksoplazmozaIGM.getText().toString());
                 badaniaDodatkowe.setToksoplazmozaIGMData(toksoplazmozaDataIGM.getText().toString());
             }
